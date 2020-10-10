@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}library_list.html{% endblock %}
+
+{% block content %}
+
+    <h1>Library List</h1>
+    <br>
+        <ul>
+            {% for library in object_list %}
+            <li><a href="{% url 'library:detail' library.id %}">{{ library }}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}

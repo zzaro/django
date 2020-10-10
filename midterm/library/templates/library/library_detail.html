@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}library_detail.html{% endblock %}
+
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+        <ul>
+            <li>제목 : {{ object.title }} </li>
+            <li>저자 : {{ object.author }} </li>
+            <li>출판사 : {{ object.publisher }} </li>
+            <li>분류 : {{ object.category }} </li>
+            <li>ISBN : {{ object.isbn_code }} </li>
+        </ul>
+{% endblock %}
