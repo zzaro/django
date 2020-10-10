@@ -27,8 +27,6 @@ SECRET_KEY = 'pz(=@891_gtr!i%812$j7v-0(s&*mf$3y4nj=jmo(@0!vc3nzj'
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'library.apps.LibraryConfig',
+    'members.apps.MembersConfig',
 ]
 
 MIDDLEWARE = [
