@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}members_list.html{% endblock %}
+
+{% block content %}
+
+    <h1>Members List</h1>
+    <br>
+    <ul>
+        {% for members in object_list %}
+        <li><a href="{% url 'members:detail' members.id %}">{{ members }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

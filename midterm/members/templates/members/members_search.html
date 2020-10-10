@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block title %}members_search.html{% endblock %}
+{% block content %}
+    <h1>소장 자료 검색</h1>
+    <br/>
+    <form action="." method="post">{% csrf_token %}
+        {{ form.as_table }} <!-- 폼을 테이블 형식으로 표시. form은 뷰에서 넘겨준 PostSearchForm 객체 -->
+        <input type = "submit" value="Submit" class="btn btn-primary btn-sm">
+    </form>
+    <br/><br/>
+
+    {% if object_list %}
+        {% for members in object_list %}
+<!-- 객체의 title 속성을 <h2> 크기로 출력. title 텍스트에 링크 연결. -->
+        <h2><a href="{{ members.get_absolute_url }}">{{ members.title }}</a></h2>
+        {% endfor %}
+<!-- 검색 결과가 없는 경우 search_term에 값이 있는지 확인 -->
+    {% elif search_term %}
+        <b><i>Search Word({{ search_term }}) Not Found!</i></b>
+    {% endif %}
+{% endblock %}
+</body>
+</html>
